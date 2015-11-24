@@ -3,10 +3,10 @@ NAME=smartlabels
 VERSION=latest
 
 build:
-	docker build -t ${AUTHOR}/${NAME}:${LATEST} .
+	docker build -t ${AUTHOR}/${NAME}:${VERSION} .
 
 print:
-	@docker inspect -f '{{.Config.Labels.running}}' ${AUTHOR}/${NAME}:${LATEST}
+	@docker inspect -f '{{.Config.Labels.running}}' ${AUTHOR}/${NAME}:${VERSION}
 
 run:
-	`docker inspect -f '{{.Config.Labels.running}}' ${AUTHOR}/${NAME}:${LATEST}`
+	`docker inspect -f '{{.Config.Labels.running}}' ${AUTHOR}/${NAME}:${VERSION}`
